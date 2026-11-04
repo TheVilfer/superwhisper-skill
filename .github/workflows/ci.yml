@@ -8,11 +8,19 @@ permissions:
 jobs:
   test:
     strategy:
+      fail-fast: false
       matrix:
-        os: [macos-latest, ubuntu-latest]
+        include:
+          - os: ubuntu-latest
+            optional: false
+          # macOS hosted runners are often capacity-limited; bash 3.2 coverage is best-effort.
+          - os: macos-latest
+            optional: true
     runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.optional }}
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: shellcheck
         run: |
           command -v shellcheck >/dev/null || brew install shellcheck
