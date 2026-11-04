@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Stand-in for the superwhisper CLI: prints the fixture named by $FIXTURE.
+cat "${FIXTURE:?}"

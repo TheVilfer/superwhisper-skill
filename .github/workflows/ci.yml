@@ -1,0 +1,26 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: shellcheck
+        run: |
+          command -v shellcheck >/dev/null || brew install shellcheck
+          shellcheck scripts/*.sh tests/run.sh tests/fixtures/fake-superwhisper
+      - name: tests
+        run: tests/run.sh
+      - name: SKILL.md frontmatter
+        run: |
+          head -1 SKILL.md | grep -qx -- '---'
+          grep -q '^name: superwhisper$' SKILL.md
+          grep -q '^description: ' SKILL.md

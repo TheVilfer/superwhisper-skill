@@ -1,0 +1,21 @@
+{
+  "id": "a1b2c3d4e5f60718293a4b5c6d7e8f90",
+  "title": "Pricing sync",
+  "datetime": "2026-11-04 11:49:42.000",
+  "durationMs": 300000,
+  "attendees": [],
+  "speakers": [{"number": 0, "name": "Alice"}, {"number": 1, "name": "Bob"}],
+  "summary": "Discussed pricing.",
+  "privateNotes": "",
+  "segments": [
+    {"start": 1.0, "end": 2.0, "speaker": null, "text": "Продолжение", "words": []},
+    {"start": 2.0, "end": 3.0, "speaker": null, "text": "следует...", "words": []},
+    {"start": 5.0, "end": 5.5, "speaker": 0, "text": "Let's", "words": []},
+    {"start": 5.5, "end": 6.0, "speaker": 0, "text": " talk pricing.", "words": []},
+    {"start": 7.0, "end": 8.0, "speaker": 1, "text": "Thanks for watching!", "words": []},
+    {"start": 8.0, "end": 9.0, "speaker": 1, "text": "Price goes up.", "words": []},
+    {"start": 9.5, "end": 10.0, "speaker": 1, "text": "Спасибо.", "words": []},
+    {"start": 120.0, "end": 121.0, "speaker": 1, "text": "New turn after the gap.", "words": []},
+    {"start": 125.0, "end": 126.0, "speaker": 7, "text": "Unknown number.", "words": []}
+  ]
+}
